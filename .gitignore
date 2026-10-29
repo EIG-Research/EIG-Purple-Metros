@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+
+# R build/cache artifacts
+*_cache/
+*_files/
+.quarto/
+renv/library/
+renv/staging/
+
+# Project-specific large or restricted data
+data/raw/2024 Presidential.csv
