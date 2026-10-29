@@ -1,6 +1,6 @@
 
 # Purple Metros: Job Growth by 2024 Presidential Vote
-Repository for the EIG analysis ["The Country's Most Contested Metro Battlegrounds Are Also the Fastest Growing"]([ARTICLE LINK]) by Kenan Fikri and Thomas Cronin, published on [PUBLICATION DATE].
+Repository for the EIG analysis ["The Country's Most Contested Metro Battlegrounds Are Also the Fastest Growing"](https://agglomerations.eig.org/p/the-fastest-growing-metros-are-also) by Kenan Fikri and Thomas Cronin, published on October 29, 2026.
 
 This descriptive analysis classifies U.S. metropolitan areas by their 2024 presidential vote margin and tracks how employment has changed in each group since President Trump took office in January 2025. Purple metros, where Trump and Harris finished within 3 percentage points of each other, have posted the strongest job growth since January 2025, while very blue metros still have fewer jobs than they did at inauguration. Differences in industry mix do not explain the gap.
 
@@ -15,7 +15,7 @@ This descriptive analysis classifies U.S. metropolitan areas by their 2024 presi
 | `code/3 - Visualize Data.R` | The shift-share figure and sector/supersector job change bar plots for each political group. |
 | `data/raw/` | Inputs as received. |
 | `data/processed/` | Checkpoints written by scripts 1 and 2. |
-| `output/` | `Employment Data unformatted.xlsx`, the data behind the Datawrapper charts in the piece. |
+| `output/` | `Employment Data.xlsx`, the data behind the Datawrapper charts in the piece. |
 | `output/figures/` | The shift-share chart, plus job change bar plots by political group in `sector barplots/` and `supersector barplots/`. |
 
 ## Data sources
@@ -39,7 +39,7 @@ This descriptive analysis classifies U.S. metropolitan areas by their 2024 presi
    - **Purple:** margin within ±3 points
    - **Lean Blue:** Harris margin greater than 3 and up to 10 points
    - **Very Blue:** Harris margin greater than 10 points
-5. **Headline employment trends.** Script 2 joins seasonally adjusted total nonfarm employment to each metro's political group and 2025 population, then sums employment by group and month. In the piece, these totals are indexed to January 2025, compared over the 19 months before and after inauguration, and used to count the share of metros in each group with positive growth since January 2025. [CONFIRM: the indexing, pre/post growth rates, share of metros growing, and the strongest/weakest purple metro rankings hard-coded in `helpers.R` were calculated outside R from `Employment Data unformatted.xlsx`.]
+5. **Headline employment trends.** Script 2 joins seasonally adjusted total nonfarm employment to each metro's political group and 2025 population, then sums employment by group and month. In the piece, these totals are indexed to January 2025, compared over the 19 months before and after inauguration, and used to count the share of metros in each group with positive growth since January 2025. [CONFIRM: the indexing, pre/post growth rates, share of metros growing, and the strongest/weakest purple metro rankings hard-coded in `helpers.R` were calculated outside R from `Employment Data.xlsx`.]
 6. **Industry changes.** Because SAE does not publish seasonally adjusted data at the metro-sector level, industry results use non-seasonally adjusted employment and compare September 2024 with September 2026 to control for seasonality. Script 2 calculates job changes by political group for each sector and supersector, and also calculates:
    - Private sector employment (total nonfarm minus government)
    - Federal versus state and local government job changes
@@ -62,7 +62,7 @@ Total nonfarm trends use seasonally adjusted data, while industry results use no
 | `data/processed/Political Supersector Growth.rds` | Script 2 | Employment change by political group and supersector, September 2024 to September 2026 |
 | `data/processed/Shift Share.rds` | Script 2 | Actual and industry-mix-predicted employment growth by political group |
 | `data/processed/Political Shift Share.xlsx` | Script 2 | Chart data for the shift-share figure |
-| `output/Employment Data unformatted.xlsx` | Script 2 | Chart data for the employment index, growth comparison, share of metros growing, metro maps, and population figures. Sheets: metro-level monthly employment with population and political group; monthly employment by political group; 2025 population by political group; sector employment change by political group |
+| `output/Employment Data.xlsx` | Script 2 | Chart data for the employment index, growth comparison, share of metros growing, metro maps, and population figures. Sheets: metro-level monthly employment with population and political group; monthly employment by political group; 2025 population by political group; sector employment change by political group |
 
 ## Reproducing the analysis
 
